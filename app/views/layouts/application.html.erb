@@ -9,33 +9,12 @@
         <![endif]-->
     </head>
     <body>
-        <header class="navbar navbar-fixed-top navbar-inverse">
-          <div class="navbar-inner">
-            <div class="container">
-              <%= link_to "sample app", '#', id: "logo" %>
-              <nav>
-                <ul class="nav pull-right">
-                  <li><%= link_to "Home",    '#' %></li>
-                  <li><a href="http://twitter.com/pythontrek">Python Trek</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </header>
+        <%= render 'layouts/header' %>
         <div class="container">
             <%= yield %>
         </div>
+        <%= render 'layouts/footer' %>
     </body>
-    <footer class="footer">
-      <small>
-        <a href="http://nyghtowl.io/">Nyghtowl.io</a>
-      </small>
-      <nav>
-        <ul>
-          <li><%= link_to "About",   '#' %></li>
-          <li><%= link_to "Contact", '#' %></li>
-        </ul>
-      </nav>
-    </footer>
+
 
 </html>

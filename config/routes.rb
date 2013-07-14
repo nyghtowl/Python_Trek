@@ -1,5 +1,9 @@
 MarkovRails::Application.routes.draw do
-  get "static_pages/home"
+
+  root to: 'static_pages#home'
+
+  # ajax call  /tweet controller
+  # put txt and class in lib or model - prod - restart server each lib change
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
