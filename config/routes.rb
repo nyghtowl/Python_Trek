@@ -1,9 +1,13 @@
 MarkovRails::Application.routes.draw do
+  resources :posts
 
   root to: 'static_pages#home'
 
+  match '/post', to: 'posts#post'
+
+
   # ajax call  /tweet controller
-  # put txt and class in lib or model - prod - restart server each lib change
+  # match '/tweet' => 'posts#post'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
