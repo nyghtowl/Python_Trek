@@ -3,6 +3,16 @@
 <div class="center hero-unit">
     <h1>Python Trek</h1>
     <h2>Want to generate a randome tweet mashup between Monty Python and Star Trek? Press the button below.</h2>
-     <%= link_to "Tweet!", '#', class: "btn btn-large btn-primary" %>
 
+	<%= button_to "Tweet!", '/post', class: "btn btn-large btn-primary", remote: true, id: 'tweet_msg' %>
+
+	<div id="tweet_response"></div>
+
+	<script>
+		$(function() {
+	        $('form').on('ajax:success', function(e, data, status, xhr) {
+	        	$('#tweet_response').text(data.response);
+	        });
+	    });
+	</script>
 </div>

@@ -55,7 +55,7 @@ class Markov
             head = choice
         end
        
-        message.join(" ") + END_MARKS.sample
+        message = message.join(" ") + END_MARKS.sample
 
         if message.length > 140
             message = message[0...139] + END_MARKS.sample
