@@ -4,10 +4,18 @@ require 'markov_class'
 require "rubygems"
 require "twitter"
 
+# Initialized when Tweet button pushed and referenced in routes
 def create
+  # Generates sample text from Monty Python & Star Trek raw text file
   @sample_text = open(Rails.root+"lib/markov_class/python_trek.txt").read()
+
+  # Creates an instance of hashes with python and trek words
   @tweet = TwitterMarkov.new @sample_text
+
+  # Builds random tweet
   random_txt = @tweet.generate()
+
+  # Returns random tweet in CLI and posts @pythontrek
   print random_txt
   render :json => { :response => user_tweet(random_txt) }
 end
@@ -28,7 +36,7 @@ def user_tweet(random_txt)
     # Post a status update
     print random_txt
     client.update(random_txt)
-    # Twitter.update(random_txt)
+
     return random_txt
     # redirect_to request.referer, :notice => 'Tweet successfully posted'
 end

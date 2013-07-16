@@ -2,13 +2,17 @@
 
 <div class="center hero-unit">
     <h1>Python Trek</h1>
-    <h2>Want to generate a randome tweet mashup between Monty Python and Star Trek? Press the button below.</h2>
+    <h2>Want to generate a randome tweet mashup between Monty Python and Star Trek? <br>
+    Press the button below.</h2>
 
+	<!--     Generates random tweet by calling post route and using Ajax with the remote true reference -->
 	<%= button_to "Tweet!", '/post', class: "btn btn-large btn-primary", remote: true, id: 'tweet_msg' %>
 
+	<!-- Where the tweet response is posted on the page -->
 	<div id="tweet_response"></div>
 
 	<script>
+		// Ajax posts the tweet response on the web page
 		$(function() {
 	        $('form').on('ajax:success', function(e, data, status, xhr) {
 	        	$('#tweet_response').text(data.response);
