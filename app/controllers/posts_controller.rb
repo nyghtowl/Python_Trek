@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-require 'markov_class'
+require 'markov_class' # Connects to TwitterMarkov class in lib
 require "rubygems"
 require "twitter"
 
