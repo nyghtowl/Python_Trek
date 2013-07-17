@@ -6,7 +6,7 @@
     Press the button below.</h2>
 
 	<!--     Generates random tweet by calling post route and using Ajax with the remote true reference -->
-	<%= button_to "Tweet!", '/post', class: "btn btn-large btn-primary", remote: true, id: 'tweet_msg' %>
+	<%= button_to "Tweet!", posts_path, class: "btn btn-large btn-primary", remote: true, id: 'tweet_msg' %>
 
 	<!-- Where the tweet response is posted on the page -->
 	<div id="tweet_response"></div>
